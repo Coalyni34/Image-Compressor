@@ -1,4 +1,7 @@
 
+using System.Drawing.Imaging;
+using System.Windows.Forms;
+
 namespace ImageCompressor
 {
     public partial class ImageCompressorForm : Form
@@ -21,7 +24,7 @@ namespace ImageCompressor
             {
                 OpenFileDialog ofd = new OpenFileDialog();
                 ofd.ShowDialog();
-                Address.Text = Path.GetFileName(ofd.FileName);
+                Address.Text = Path.GetFileNameWithoutExtension(ofd.FileName);
                 Source = Image.FromFile(ofd.FileName);
             }
             catch (Exception ex)
@@ -86,11 +89,63 @@ namespace ImageCompressor
             try
             {
                 SaveFileDialog saveFileDialog = new SaveFileDialog();
-                saveFileDialog.Filter = "*Image files | (*jpg, *png, *gif, *bmp, *tif";
+                saveFileDialog.Filter = "*Image Files |*jpg " +
+                    "| *Image Files |*png " +
+                    "| *Image Files |*gif " +
+                    "| *Image Files |*bmp " +
+                    "| *Image Files |*tif " +
+                    "| *Image Files |*webp" +
+                    "| *Icon Files |*ico";
                 saveFileDialog.Title = "Saving image";
-                saveFileDialog.FileName = $"{Path.GetFileNameWithoutExtension(Address.Text)}_compressed.png";
-                saveFileDialog.ShowDialog();
-                Finalart.BackgroundImage.Save(saveFileDialog.FileName);
+
+                saveFileDialog.FileName = Address.Text;
+                
+                if(Finalart.BackgroundImage != null) { 
+                ImageFormat imageFormat = ImageFormat.Png;
+                Image CompressedImage = Finalart.BackgroundImage;
+                string saveImage;
+                    if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                    {
+                        switch (saveFileDialog.FilterIndex)
+                        {
+                            case 1:
+                                imageFormat = ImageFormat.Jpeg;
+                                saveImage = $"{saveFileDialog.FileName}.jpg";
+                                CompressedImage.Save(saveImage, imageFormat);
+                                break;
+                            case 2:
+                                imageFormat = ImageFormat.Png;
+                                saveImage = $"{saveFileDialog.FileName}.png";
+                                CompressedImage.Save(saveImage, imageFormat);
+                                break;
+                            case 3:
+                                imageFormat = ImageFormat.Gif;
+                                saveImage = $"{saveFileDialog.FileName}.gif";
+                                CompressedImage.Save(saveImage, imageFormat);
+                                break;
+                            case 4:
+                                imageFormat = ImageFormat.Bmp;
+                                saveImage = $"{saveFileDialog.FileName}.bmp";
+                                CompressedImage.Save(saveImage, imageFormat);
+                                break;
+                            case 5:
+                                imageFormat = ImageFormat.Tiff;
+                                saveImage = $"{saveFileDialog.FileName}.tiff";
+                                CompressedImage.Save(saveImage, imageFormat);
+                                break;
+                            case 6:
+                                imageFormat = ImageFormat.Webp;
+                                saveImage = $"{saveFileDialog.FileName}.webp";
+                                CompressedImage.Save(saveImage, imageFormat);
+                                break;
+                            case 7:
+                                imageFormat = ImageFormat.Icon;
+                                saveImage = $"{saveFileDialog.FileName}.ico";
+                                CompressedImage.Save(saveImage, imageFormat);
+                                break;
+                        }
+                    }
+                }
             }
             catch (Exception ex)
             {

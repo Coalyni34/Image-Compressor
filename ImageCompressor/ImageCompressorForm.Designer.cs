@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ImageCompressorForm));
             CompressButton = new Button();
             Finalart = new PictureBox();
             Address = new TextBox();
@@ -445,6 +446,7 @@
             Controls.Add(Address);
             Controls.Add(Finalart);
             Controls.Add(CompressButton);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "ImageCompressorForm";
             Text = "Image Compressor";
             Click += label2_Click;
