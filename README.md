@@ -12,6 +12,6 @@ You can read the code and the inteface of my program is very simple.
 ### There you need to set brightness bariers (count from 0 to 255) of R, G, B
 ![image](https://github.com/user-attachments/assets/10179df2-f13c-4980-8bd4-f0284173ef94)
 ### There you can do something with your compressed image
-![image](https://github.com/user-attachments/assets/f5b0c857-b18e-4ac0-ad5b-0daecd3216b6)
+![image](https://github.com/user-attachments/assets/0b6eeb14-3769-4773-bece-4753660d1b33)
 ### There you need to change foreground color and background color
 ![image](https://github.com/user-attachments/assets/f1694217-e344-4141-8d04-3ba731d085ef)
