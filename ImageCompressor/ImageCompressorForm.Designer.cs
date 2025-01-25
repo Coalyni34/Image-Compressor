@@ -110,7 +110,6 @@
             // progressBar
             // 
             progressBar.Location = new Point(8, 150);
-            progressBar.Maximum = 10;
             progressBar.Name = "progressBar";
             progressBar.Size = new Size(422, 11);
             progressBar.TabIndex = 3;

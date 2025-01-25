@@ -43,19 +43,9 @@ namespace ImageCompressor
                     Convert.ToInt16(gBrigTextBox.Text),
                     Convert.ToInt16(bBrigTextbox.Text)),
                     ForeGroundTestColor.BackColor,
-                    BackGroundTestColor.BackColor);
-                if (Finalart.BackgroundImage != newImage)
-                {
-                    while (progressBar.Value != 10)
-                    {
-                        progressBar.Value++;
-                    }
-                    Finalart.BackgroundImage = newImage;
-                }
-                else
-                {
-                    progressBar.Value = 0;
-                }
+                    BackGroundTestColor.BackColor,
+                    progressBar);
+                Finalart.BackgroundImage = newImage;
             }
             catch (Exception ex)
             {
@@ -76,8 +66,8 @@ namespace ImageCompressor
                 ForegroundColorTextBox.Text = $"{trackBars[0].Value}, {trackBars[1].Value}, {trackBars[2].Value}";
                 BackgroundColorTextBox.Text = $"{trackBars[3].Value}, {trackBars[4].Value}, {trackBars[5].Value}";
 
-                BackGroundTestColor.BackColor = Color.FromArgb(trackBars[0].Value, trackBars[1].Value, trackBars[2].Value);
-                ForeGroundTestColor.BackColor = Color.FromArgb(trackBars[3].Value, trackBars[4].Value, trackBars[5].Value);
+                ForeGroundTestColor.BackColor = Color.FromArgb(trackBars[0].Value, trackBars[1].Value, trackBars[2].Value);
+                BackGroundTestColor.BackColor = Color.FromArgb(trackBars[3].Value, trackBars[4].Value, trackBars[5].Value);
             }
             catch (Exception ex)
             {

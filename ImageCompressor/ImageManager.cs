@@ -8,7 +8,7 @@ namespace ImageCompressor
         //This is an image in binary code
         public byte[,] pixelColorData { get; set; }
 
-        public Image ConvertDataToImage(byte[,] colorData, Color foreground, Color background)
+        public Image ConvertDataToImage(byte[,] colorData, Color foreground, Color background, ProgressBar progressBar)
         {
             Bitmap result_bitmap = new Bitmap(colorData.GetLength(0), colorData.GetLength(1));
             using (Graphics graphics = Graphics.FromImage(result_bitmap))
@@ -17,18 +17,19 @@ namespace ImageCompressor
                 {
                     for (int y = 0; y < result_bitmap.Height; y++)
                     {
-                        if (colorData[x, y] != 0)
+                        if (colorData[x, y] == 0)
                         {
                             result_bitmap.SetPixel(x, y, foreground);                            
                         }
                         else 
                         {                            
                             result_bitmap.SetPixel(x, y, background);
-                        }
-                    }
+                        }                        
+                    }                    
                 }
-            }
+            }           
             Image result_image = result_bitmap;
+            progressBar.Value = progressBar.Maximum;
             return result_image;
         }
 
