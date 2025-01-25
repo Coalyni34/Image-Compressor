@@ -76,8 +76,8 @@ namespace ImageCompressor
                 ForegroundColorTextBox.Text = $"{trackBars[0].Value}, {trackBars[1].Value}, {trackBars[2].Value}";
                 BackgroundColorTextBox.Text = $"{trackBars[3].Value}, {trackBars[4].Value}, {trackBars[5].Value}";
 
-                ForeGroundTestColor.BackColor = Color.FromArgb(trackBars[0].Value, trackBars[1].Value, trackBars[2].Value);
-                BackGroundTestColor.BackColor = Color.FromArgb(trackBars[3].Value, trackBars[4].Value, trackBars[5].Value);
+                BackGroundTestColor.BackColor = Color.FromArgb(trackBars[0].Value, trackBars[1].Value, trackBars[2].Value);
+                ForeGroundTestColor.BackColor = Color.FromArgb(trackBars[3].Value, trackBars[4].Value, trackBars[5].Value);
             }
             catch (Exception ex)
             {
