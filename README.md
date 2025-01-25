@@ -6,7 +6,7 @@ The Image Compressor decodes an image to the binary code, then it compiles it ag
 You can read the code and the inteface of my program is very simple.
 ## Quick-start
 ### There are some text boxes, bars and buttons. So, how to use this app?
-![image](https://github.com/user-attachments/assets/29efa7b0-bae9-4591-95b9-74714802323c)
+![image](https://github.com/user-attachments/assets/b56889e3-360c-4af6-b69e-b37cdf18d088)
 ### There you need to send your image by button further. 
 ![image](https://github.com/user-attachments/assets/606fe33e-eade-4b2b-a1ff-83ce2ed66e4a)
 ### There you need to set brightness bariers (count from 0 to 255) of R, G, B
