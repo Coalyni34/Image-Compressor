@@ -67,6 +67,7 @@
             ClearButton = new Button();
             BackGroundTestColor = new PictureBox();
             ForeGroundTestColor = new PictureBox();
+            CopyButton = new Button();
             ((System.ComponentModel.ISupportInitialize)Finalart).BeginInit();
             ((System.ComponentModel.ISupportInitialize)RforegroundTrackBar).BeginInit();
             ((System.ComponentModel.ISupportInitialize)GforegroundTrackBar).BeginInit();
@@ -92,9 +93,9 @@
             // 
             Finalart.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             Finalart.BackgroundImageLayout = ImageLayout.Stretch;
-            Finalart.Location = new Point(367, 12);
+            Finalart.Location = new Point(436, 12);
             Finalart.Name = "Finalart";
-            Finalart.Size = new Size(421, 426);
+            Finalart.Size = new Size(537, 426);
             Finalart.TabIndex = 1;
             Finalart.TabStop = false;
             // 
@@ -103,7 +104,7 @@
             Address.Location = new Point(49, 39);
             Address.Name = "Address";
             Address.ReadOnly = true;
-            Address.Size = new Size(312, 23);
+            Address.Size = new Size(381, 23);
             Address.TabIndex = 2;
             // 
             // progressBar
@@ -111,7 +112,7 @@
             progressBar.Location = new Point(8, 150);
             progressBar.Maximum = 10;
             progressBar.Name = "progressBar";
-            progressBar.Size = new Size(349, 11);
+            progressBar.Size = new Size(422, 11);
             progressBar.TabIndex = 3;
             // 
             // Please
@@ -167,7 +168,7 @@
             // 
             // ForegroundColorTextBox
             // 
-            ForegroundColorTextBox.Location = new Point(261, 68);
+            ForegroundColorTextBox.Location = new Point(330, 68);
             ForegroundColorTextBox.Name = "ForegroundColorTextBox";
             ForegroundColorTextBox.ReadOnly = true;
             ForegroundColorTextBox.Size = new Size(100, 23);
@@ -194,7 +195,7 @@
             // bBrigLabel
             // 
             bBrigLabel.AutoSize = true;
-            bBrigLabel.Location = new Point(8, 132);
+            bBrigLabel.Location = new Point(8, 129);
             bBrigLabel.Name = "bBrigLabel";
             bBrigLabel.Size = new Size(38, 15);
             bBrigLabel.TabIndex = 13;
@@ -202,7 +203,7 @@
             // 
             // BackgroundColorTextBox
             // 
-            BackgroundColorTextBox.Location = new Point(261, 97);
+            BackgroundColorTextBox.Location = new Point(330, 100);
             BackgroundColorTextBox.Name = "BackgroundColorTextBox";
             BackgroundColorTextBox.ReadOnly = true;
             BackgroundColorTextBox.Size = new Size(100, 23);
@@ -211,7 +212,7 @@
             // Foregroundcolor
             // 
             Foregroundcolor.AutoSize = true;
-            Foregroundcolor.Location = new Point(158, 76);
+            Foregroundcolor.Location = new Point(225, 72);
             Foregroundcolor.Name = "Foregroundcolor";
             Foregroundcolor.Size = new Size(99, 15);
             Foregroundcolor.TabIndex = 15;
@@ -220,7 +221,7 @@
             // Backgroundcolor
             // 
             Backgroundcolor.AutoSize = true;
-            Backgroundcolor.Location = new Point(156, 100);
+            Backgroundcolor.Location = new Point(225, 103);
             Backgroundcolor.Name = "Backgroundcolor";
             Backgroundcolor.Size = new Size(101, 15);
             Backgroundcolor.TabIndex = 16;
@@ -403,11 +404,22 @@
             ForeGroundTestColor.TabIndex = 37;
             ForeGroundTestColor.TabStop = false;
             // 
+            // CopyButton
+            // 
+            CopyButton.Location = new Point(345, 167);
+            CopyButton.Name = "CopyButton";
+            CopyButton.Size = new Size(85, 31);
+            CopyButton.TabIndex = 38;
+            CopyButton.Text = "Copy image";
+            CopyButton.UseVisualStyleBackColor = true;
+            CopyButton.Click += CopyButton_Click;
+            // 
             // ImageCompressorForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(985, 450);
+            Controls.Add(CopyButton);
             Controls.Add(ForeGroundTestColor);
             Controls.Add(BackGroundTestColor);
             Controls.Add(ClearButton);
@@ -503,5 +515,6 @@
         private Button ClearButton;
         private PictureBox BackGroundTestColor;
         private PictureBox ForeGroundTestColor;
+        private Button CopyButton;
     }
 }

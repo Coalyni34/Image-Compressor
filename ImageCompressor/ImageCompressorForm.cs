@@ -44,14 +44,14 @@ namespace ImageCompressor
                     Convert.ToInt16(bBrigTextbox.Text)),
                     ForeGroundTestColor.BackColor,
                     BackGroundTestColor.BackColor);
-                if (Finalart.BackgroundImage != newImage) 
+                if (Finalart.BackgroundImage != newImage)
                 {
                     while (progressBar.Value != 10)
                     {
                         progressBar.Value++;
                     }
                     Finalart.BackgroundImage = newImage;
-                }        
+                }
                 else
                 {
                     progressBar.Value = 0;
@@ -99,11 +99,12 @@ namespace ImageCompressor
                 saveFileDialog.Title = "Saving image";
 
                 saveFileDialog.FileName = Address.Text;
-                
-                if(Finalart.BackgroundImage != null) { 
-                ImageFormat imageFormat = ImageFormat.Png;
-                Image CompressedImage = Finalart.BackgroundImage;
-                string saveImage;
+
+                if (Finalart.BackgroundImage != null)
+                {
+                    ImageFormat imageFormat = ImageFormat.Png;
+                    Image CompressedImage = Finalart.BackgroundImage;
+                    string saveImage;
                     if (saveFileDialog.ShowDialog() == DialogResult.OK)
                     {
                         switch (saveFileDialog.FilterIndex)
@@ -156,12 +157,19 @@ namespace ImageCompressor
         {
             try
             {
-                Finalart.BackgroundImage = null;    
+                Finalart.BackgroundImage = null;
                 progressBar.Value = 0;
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
+            }
+        }
+        private void CopyButton_Click(object sender, EventArgs e)
+        {
+            if (Finalart.BackgroundImage != null)
+            {
+                Clipboard.SetImage(Finalart.BackgroundImage);
             }
         }
         private void label2_Click(object sender, EventArgs e)
